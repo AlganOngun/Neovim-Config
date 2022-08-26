@@ -5,6 +5,8 @@ require("user.plugins")
 require("pluginConfigs.treesitter")
 require("pluginConfigs.completionConfig")
 require("pluginConfigs.formatter")
+require("pluginConfigs.lualine")
+require("pluginConfigs.toggleterm")
 
 require("nvim-tree").setup()
 

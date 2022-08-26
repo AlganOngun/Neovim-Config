@@ -66,6 +66,20 @@ return require("packer").startup(function(use)
 		end,
 	})
 
+	-- Status Line
+
+	use({
+		"nvim-lualine/lualine.nvim",
+		requires = { "kyazdani42/nvim-web-devicons", opt = true },
+	})
+
+	-- Terminals
+
+	use({
+		"akinsho/toggleterm.nvim",
+		tag = "v2.*",
+	})
+
 	-- Colorschemes
 
 	use({ "catppuccin/nvim", as = "catppuccin" })

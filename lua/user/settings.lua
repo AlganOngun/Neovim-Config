@@ -1,18 +1,19 @@
-require('macros')
+require("macros")
 
 -- General Settings
 
-set('tabstop', 2)
-set('shiftwidth', 2)
-set('mouse', '')
-set('number', true)
-set('relativenumber', true)
-set('termguicolors', true)
+set("tabstop", 2)
+set("shiftwidth", 2)
+set("mouse", "")
+set("number", true)
+set("relativenumber", true)
+set("termguicolors", true)
+set("shell", "fish")
 
--- Colorscheme settings 
+-- Colorscheme settings
 
-vim.g.catppuccin_flavour = 'macchiato'
+vim.g.catppuccin_flavour = "macchiato"
 
-require('catppuccin').setup()
+require("catppuccin").setup()
 
-vim.cmd [[colorscheme catppuccin]]
+vim.cmd([[colorscheme catppuccin]])
