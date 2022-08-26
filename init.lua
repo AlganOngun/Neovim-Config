@@ -3,6 +3,10 @@ require("user.mappings")
 require("user.plugins")
 
 require("pluginConfigs.treesitter")
+
+require("mason").setup()
+require("mason-lspconfig").setup()
+
 require("pluginConfigs.completionConfig")
 require("pluginConfigs.formatter")
 require("pluginConfigs.lualine")

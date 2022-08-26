@@ -18,7 +18,6 @@ return require("packer").startup(function(use)
 
 	-- Completion
 
-	use("neovim/nvim-lspconfig")
 	use("hrsh7th/cmp-nvim-lsp")
 	use("hrsh7th/cmp-buffer")
 	use("hrsh7th/cmp-path")
@@ -78,6 +77,14 @@ return require("packer").startup(function(use)
 	use({
 		"akinsho/toggleterm.nvim",
 		tag = "v2.*",
+	})
+
+	-- Management
+
+	use({
+		"williamboman/mason.nvim",
+		"williamboman/mason-lspconfig.nvim",
+		"neovim/nvim-lspconfig",
 	})
 
 	-- Colorschemes
