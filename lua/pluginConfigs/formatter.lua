@@ -27,6 +27,26 @@ require("formatter").setup({
 			end,
 		},
 
+		cpp = {
+			require("formatter.filetypes.cpp").clangformat,
+
+			function()
+				return {
+					exe = "clang-format",
+				}
+			end,
+		},
+
+		c = {
+			require("formatter.filetypes.c").clangformat,
+
+			function()
+				return {
+					exe = "clang-format",
+				}
+			end,
+		},
+
 		["*"] = {
 			require("formatter.filetypes.any").remove_trailing_whitespace,
 		},
