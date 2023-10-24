@@ -12,16 +12,6 @@ createKeymap("gl", "<c-w>l")
 
 -- Formatting
 
--- Nvim Tree Keys
-
-createKeymap(";t", ":NvimTreeToggle<CR>")
-
--- Bufferline Keys
-
-createKeymap("fh", ":BufferLineCyclePrev<CR>")
-createKeymap("fl", ":BufferLineCycleNext<CR>")
-createKeymap("fj", ":bdelete!<CR>")
-
 -- Terminal Mode Keys
 local terminalKeymap = function(key, action)
 	createKeymap(key, action, "t")
