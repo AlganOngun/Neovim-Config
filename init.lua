@@ -17,38 +17,37 @@ require("lazy").setup("plugins")
 require("user.mappings")
 require("user.settings")
 
+require("lualine").setup({})
+
 require("pluginConfigs.telescope")
 require("pluginConfigs.toggleterm")
 require("pluginConfigs.cmp")
-require("mason").setup()
-require("mason-lspconfig").setup()
-
-local capabilities = require("cmp_nvim_lsp").default_capabilities(vim.lsp.protocol.make_client_capabilities())
-require("mason-lspconfig").setup_handlers({
-	function(server_name)
-		require("lspconfig")[server_name].setup({
-			capabilities = capabilities,
-		})
-	end,
-
-	["lua_ls"] = function()
-		require("lspconfig").lua_ls.setup({
-			settings = {
-				Lua = {
-					diagnostics = {
-						globals = { "vim" },
-					},
-				},
-			},
-		})
-	end,
-})
 
 require("pluginConfigs.formatter")
 
-require("lualine").setup({
-	theme = "gruvbox-baby",
-})
+-- place this in one of your configuration file(s)
+local hop = require("hop")
+vim.keymap.set("", ";", function()
+	hop.hint_words({ current_line_only = false, multi_windows = true })
+end, { remap = true })
+vim.keymap.set("", "F", function()
+	hop.hint_char1({ current_line_only = true })
+end, { remap = true })
+vim.keymap.set("", "t", function()
+	hop.hint_lines_skip_whitespace({
+		current_line_only = false,
+		multi_windows = true,
+	})
+end, { remap = true })
+vim.keymap.set("", "T", function()
+	hop.hint_lines({
+		current_line_only = false,
+		multi_windows = true,
+	})
+end, { remap = true })
+vim.keymap.set("", "f", function()
+	hop.hint_patterns({ current_line_only = false, multi_windows = true })
+end, { remap = true })
 
 vim.cmd([[
   augroup YankHighlight

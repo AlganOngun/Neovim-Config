@@ -1,6 +1,22 @@
 -- You dont need to set any of these options. These are the default ones. Only
 -- the loading is important
+
 require("telescope").setup({
+	defaults = {
+		layout_config = {
+			horizontal = {
+				preview_cutoff = 0,
+			},
+		},
+		mappings = {
+			n = {
+				["<c-d>"] = require("telescope.actions").delete_buffer,
+			},
+			i = {
+				["<c-d>"] = require("telescope.actions").delete_buffer,
+			},
+		},
+	},
 	extensions = {
 		fzf = {
 			fuzzy = true, -- false will only do exact matching

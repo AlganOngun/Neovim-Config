@@ -20,6 +20,42 @@ return {
 	"SirVer/ultisnips",
 	"quangnguyen30192/cmp-nvim-ultisnips",
 
+	"mfussenegger/nvim-jdtls",
+	{
+		"smoka7/hop.nvim",
+		version = "*",
+		opts = {},
+	},
+
+	"rust-lang/rust.vim",
+
+	{
+		"lewis6991/hover.nvim",
+		config = function()
+			require("hover").setup({
+				init = function()
+					-- Require providers
+					require("hover.providers.lsp")
+					require("hover.providers.gh")
+					require("hover.providers.gh_user")
+					-- require('hover.providers.jira')
+					require("hover.providers.man")
+					-- require('hover.providers.dictionary')
+				end,
+				preview_opts = {
+					border = nil,
+				},
+				-- Whether the contents of a currently open hover window should be moved
+				-- to a :h preview-window when pressing the hover keymap.
+				preview_window = false,
+				title = true,
+			})
+
+			vim.keymap.set("n", "K", require("hover").hover, { desc = "hover.nvim" })
+			vim.keymap.set("n", "gK", require("hover").hover_select, { desc = "hover.nvim (select)" })
+		end,
+	},
+
 	-- Formatting
 	"mhartington/formatter.nvim",
 
@@ -73,8 +109,7 @@ return {
 	{ "akinsho/toggleterm.nvim", version = "*", config = true },
 
 	-- Colorscheme
-
-	{ "luisiacc/gruvbox-baby", lazy = true, priority = 1000 },
+	{ "ellisonleao/gruvbox.nvim", priority = 1000, config = true, opts = ... },
 
 	-- install without yarn or npm
 	{
