@@ -20,6 +20,10 @@ return {
 	"SirVer/ultisnips",
 	"quangnguyen30192/cmp-nvim-ultisnips",
 
+	"tpope/vim-surround",
+	"junegunn/fzf",
+	"junegunn/fzf.vim",
+
 	"mfussenegger/nvim-jdtls",
 	{
 		"smoka7/hop.nvim",
@@ -28,33 +32,6 @@ return {
 	},
 
 	"rust-lang/rust.vim",
-
-	{
-		"lewis6991/hover.nvim",
-		config = function()
-			require("hover").setup({
-				init = function()
-					-- Require providers
-					require("hover.providers.lsp")
-					require("hover.providers.gh")
-					require("hover.providers.gh_user")
-					-- require('hover.providers.jira')
-					require("hover.providers.man")
-					-- require('hover.providers.dictionary')
-				end,
-				preview_opts = {
-					border = nil,
-				},
-				-- Whether the contents of a currently open hover window should be moved
-				-- to a :h preview-window when pressing the hover keymap.
-				preview_window = false,
-				title = true,
-			})
-
-			vim.keymap.set("n", "K", require("hover").hover, { desc = "hover.nvim" })
-			vim.keymap.set("n", "gK", require("hover").hover_select, { desc = "hover.nvim (select)" })
-		end,
-	},
 
 	-- Formatting
 	"mhartington/formatter.nvim",
@@ -86,27 +63,12 @@ return {
 		lazy = false,
 	},
 
-	-- Telescope
-	{
-		"nvim-telescope/telescope.nvim",
-		tag = "0.1.4",
-		dependencies = { "nvim-lua/plenary.nvim" },
-	},
-	{
-		"nvim-telescope/telescope-fzf-native.nvim",
-		build = "cmake -S. -Bbuild -DCMAKE_BUILD_TYPE=Release && cmake --build build --config Release && cmake --install build --prefix build",
-	},
-
 	-- Auto Pairs
-
 	{
 		"windwp/nvim-autopairs",
 		event = "InsertEnter",
 		opts = {}, -- this is equalent to setup({}) function
 	},
-
-	-- Terminal
-	{ "akinsho/toggleterm.nvim", version = "*", config = true },
 
 	-- Colorscheme
 	{ "ellisonleao/gruvbox.nvim", priority = 1000, config = true, opts = ... },

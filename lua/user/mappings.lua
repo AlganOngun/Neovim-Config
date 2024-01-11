@@ -1,7 +1,8 @@
 require("macros")
 
--- Saving with Ctrl+S
 createKeymapWithCustomOptions("sl", ":w<CR>", {}, "n")
+createKeymapWithCustomOptions("<c-x><c-l>", "<Plug>(fzf-complete-line)", {}, "i")
+createKeymapWithCustomOptions("<c-x><c-p>", "<Plug>(fzf-complete-path)", {}, "i")
 createKeymapWithCustomOptions("<c-s>", "<Esc>:w<CR>a", {}, "i")
 
 -- Buffer Navigation Keys
@@ -9,6 +10,8 @@ createKeymap("gj", "<c-w>j")
 createKeymap("gh", "<c-w>h")
 createKeymap("gk", "<c-w>k")
 createKeymap("gl", "<c-w>l")
+
+createKeymap("<space>o", ":Files<CR>")
 
 -- Formatting
 

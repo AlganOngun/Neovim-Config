@@ -19,8 +19,6 @@ require("user.settings")
 
 require("lualine").setup({})
 
-require("pluginConfigs.telescope")
-require("pluginConfigs.toggleterm")
 require("pluginConfigs.cmp")
 
 require("pluginConfigs.formatter")
