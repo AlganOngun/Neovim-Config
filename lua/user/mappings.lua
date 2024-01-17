@@ -12,6 +12,8 @@ createKeymap("gk", "<c-w>k")
 createKeymap("gl", "<c-w>l")
 
 createKeymap("<space>o", ":Files<CR>")
+createKeymap("<space>j", ":Buffers<CR>")
+createKeymap("<space>t", ":tabn<CR>")
 
 -- Formatting
 

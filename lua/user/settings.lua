@@ -2,8 +2,8 @@ require("macros")
 
 -- General Settings
 
-set("tabstop", 2)
-set("shiftwidth", 2)
+set("tabstop", 8)
+set("shiftwidth", 8)
 set("mouse", "")
 set("number", true)
 set("relativenumber", true)
