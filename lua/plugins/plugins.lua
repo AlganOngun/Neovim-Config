@@ -70,8 +70,18 @@ return {
 		opts = {}, -- this is equalent to setup({}) function
 	},
 
-	-- Colorscheme
-	{ "ellisonleao/gruvbox.nvim", priority = 1000, config = true, opts = ... },
+	{
+		"thimc/gruber-darker.nvim",
+		config = function()
+			require("gruber-darker").setup({
+				-- OPTIONAL
+				transparent = false, -- removes the background
+				underline = true, -- disables underline fonts
+				bold = true, -- disables bold fonts
+			})
+			vim.cmd.colorscheme("gruber-darker")
+		end,
+	},
 
 	-- install without yarn or npm
 	{
