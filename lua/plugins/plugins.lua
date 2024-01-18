@@ -24,7 +24,6 @@ return {
 	"junegunn/fzf",
 	"junegunn/fzf.vim",
 
-	"mfussenegger/nvim-jdtls",
 	{
 		"smoka7/hop.nvim",
 		version = "*",

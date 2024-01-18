@@ -8,7 +8,7 @@ set("mouse", "")
 set("number", true)
 set("relativenumber", true)
 set("termguicolors", true)
-set("shell", "fish")
+set("shell", "zsh")
 
 vim.cmd([[let g:rust_recommended_style = 1]])
 vim.cmd([[let g:rustfmt_autosave = 1]])

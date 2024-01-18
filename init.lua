@@ -28,28 +28,36 @@ local hop = require("hop")
 vim.keymap.set("", ";", function()
 	hop.hint_words({ current_line_only = false, multi_windows = true })
 end, { remap = true })
-vim.keymap.set("", "F", function()
+vim.keymap.set("", "f", function()
 	hop.hint_char1({ current_line_only = true })
 end, { remap = true })
-vim.keymap.set("", "t", function()
+vim.keymap.set("", "T", function()
 	hop.hint_lines_skip_whitespace({
 		current_line_only = false,
 		multi_windows = true,
 	})
 end, { remap = true })
-vim.keymap.set("", "T", function()
+vim.keymap.set("", "t", function()
 	hop.hint_lines({
 		current_line_only = false,
 		multi_windows = true,
 	})
 end, { remap = true })
-vim.keymap.set("", "f", function()
+vim.keymap.set("", "F", function()
 	hop.hint_patterns({ current_line_only = false, multi_windows = true })
 end, { remap = true })
 
 vim.cmd([[
-  augroup YankHighlight
-    autocmd!
-    autocmd TextYankPost * silent! lua vim.highlight.on_yank()
-  augroup end
+set guicursor=n-v-c-sm:block-Cursor,i-ci-ve:ver25-Cursor,r-cr-o:hor20-Cursor
+aug kitty_cursor
+    au!
+    au Colorscheme * set guicursor=n-v-c-sm:block-Cursor,i-ci-ve:ver25-Cursor,r-cr-o:hor20-Cursor
+aug END
+]])
+
+vim.cmd([[
+augroup YankHighlight
+autocmd!
+autocmd TextYankPost * silent! lua vim.highlight.on_yank()
+augroup end
 ]])
