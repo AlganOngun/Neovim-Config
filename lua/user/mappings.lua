@@ -3,13 +3,12 @@ require("macros")
 createKeymapWithCustomOptions("sl", ":w<CR>", {}, "n")
 createKeymapWithCustomOptions("<c-x><c-l>", "<Plug>(fzf-complete-line)", {}, "i")
 createKeymapWithCustomOptions("<c-x><c-p>", "<Plug>(fzf-complete-path)", {}, "i")
-createKeymapWithCustomOptions("<c-s>", "<Esc>:w<CR>a", {}, "i")
 
 -- Buffer Navigation Keys
-createKeymap("gj", "<c-w>j")
-createKeymap("gh", "<c-w>h")
-createKeymap("gk", "<c-w>k")
-createKeymap("gl", "<c-w>l")
+createKeymap("<c-h>", ":TmuxNavigateLeft<CR>")
+createKeymap("<c-l>", ":TmuxNavigateRight<CR>")
+createKeymap("<c-j>", ":TmuxNavigateDown<CR>")
+createKeymap("<c-k>", ":TmuxNavigateUp<CR>")
 
 createKeymap("<space>o", ":Files<CR>")
 createKeymap("<space>j", ":Buffers<CR>")

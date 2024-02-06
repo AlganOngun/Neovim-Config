@@ -24,6 +24,13 @@ return {
 	"junegunn/fzf",
 	"junegunn/fzf.vim",
 
+	"christoomey/vim-tmux-navigator",
+	{
+		"ThePrimeagen/harpoon",
+		branch = "harpoon2",
+		dependencies = { "nvim-lua/plenary.nvim" },
+	},
+
 	{
 		"smoka7/hop.nvim",
 		version = "*",
@@ -34,9 +41,6 @@ return {
 
 	-- Formatting
 	"mhartington/formatter.nvim",
-
-	-- Indent Blank Line
-	{ "lukas-reineke/indent-blankline.nvim", main = "ibl", opts = {} },
 
 	"kyazdani42/nvim-web-devicons",
 

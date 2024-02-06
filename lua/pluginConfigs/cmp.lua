@@ -74,6 +74,10 @@ cmp.setup.filetype({ "c", "cpp" }, {
 	}),
 })
 
+-- require("cmp").setup.buffer({
+-- 	enabled = false,
+-- })
+
 local cmp_autopairs = require("nvim-autopairs.completion.cmp")
 cmp.event:on("confirm_done", cmp_autopairs.on_confirm_done())
 
@@ -97,6 +101,14 @@ require("mason-lspconfig").setup_handlers({
 					},
 				},
 			},
+		})
+	end,
+	["tsserver"] = function()
+		require("lspconfig").tsserver.setup({
+			filetypes = { "javascript", "typescript", "typescriptreact", "typescript.tsx" },
+			root_dir = function()
+				return vim.loop.cwd()
+			end,
 		})
 	end,
 })

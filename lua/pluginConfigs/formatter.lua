@@ -46,6 +46,42 @@ require("formatter").setup({
 				}
 			end,
 		},
+		javascript = {
+			require("formatter.filetypes.javascript").prettier,
+
+			function()
+				return {
+					exe = "prettier",
+				}
+			end,
+		},
+		typescript = {
+			require("formatter.filetypes.typescript").prettier,
+
+			function()
+				return {
+					exe = "prettier",
+				}
+			end,
+		},
+		javascriptreact = {
+			require("formatter.filetypes.javascriptreact").prettier,
+
+			function()
+				return {
+					exe = "prettier",
+				}
+			end,
+		},
+		typescriptreact = {
+			require("formatter.filetypes.typescriptreact").prettier,
+
+			function()
+				return {
+					exe = "prettier",
+				}
+			end,
+		},
 
 		["*"] = {
 			require("formatter.filetypes.any").remove_trailing_whitespace,
