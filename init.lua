@@ -19,7 +19,8 @@ require("user.settings")
 
 require("lualine").setup({})
 
-require("pluginConfigs.cmp")
+require("oil").setup()
+vim.keymap.set("n", "-", "<CMD>Oil<CR>", { desc = "Open parent directory" })
 
 require("pluginConfigs.formatter")
 
@@ -56,14 +57,14 @@ harpoon:setup()
 vim.keymap.set("n", "<leader>a", function()
 	harpoon:list():append()
 end)
-vim.keymap.set("n", "<C-e>", function()
+vim.keymap.set("n", "<leader>e", function()
 	harpoon.ui:toggle_quick_menu(harpoon:list())
 end)
 
-vim.keymap.set("n", "<C-h>", function()
+vim.keymap.set("n", "<leader>s", function()
 	harpoon:list():select(1)
 end)
-vim.keymap.set("n", "<C-t>", function()
+vim.keymap.set("n", "<leader>h", function()
 	harpoon:list():select(2)
 end)
 vim.keymap.set("n", "<C-n>", function()
@@ -87,3 +88,5 @@ autocmd!
 autocmd TextYankPost * silent! lua vim.highlight.on_yank()
 augroup end
 ]])
+
+vim.opt.guicursor = ""

@@ -10,16 +10,6 @@ return {
 	"williamboman/mason-lspconfig.nvim",
 	"neovim/nvim-lspconfig",
 
-	"hrsh7th/cmp-nvim-lsp",
-	"hrsh7th/cmp-buffer",
-	"hrsh7th/cmp-path",
-	"hrsh7th/cmp-cmdline",
-	"amarakon/nvim-cmp-buffer-lines",
-	"hrsh7th/nvim-cmp",
-	"honza/vim-snippets",
-	"SirVer/ultisnips",
-	"quangnguyen30192/cmp-nvim-ultisnips",
-
 	"tpope/vim-surround",
 	"junegunn/fzf",
 	"junegunn/fzf.vim",
@@ -29,6 +19,13 @@ return {
 		"ThePrimeagen/harpoon",
 		branch = "harpoon2",
 		dependencies = { "nvim-lua/plenary.nvim" },
+	},
+
+	{
+		"stevearc/oil.nvim",
+		opts = {},
+		-- Optional dependencies
+		dependencies = { "nvim-tree/nvim-web-devicons" },
 	},
 
 	{
