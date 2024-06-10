@@ -12,6 +12,7 @@ createKeymap("<c-k>", ":TmuxNavigateUp<CR>")
 
 createKeymap("<space>o", ":Files<CR>")
 createKeymap("<space>j", ":Buffers<CR>")
+createKeymap("<space>g", ":Rg<CR>")
 createKeymap("<space>t", ":tabn<CR>")
 
 -- Formatting

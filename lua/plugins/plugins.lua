@@ -9,6 +9,8 @@ return {
 	"williamboman/mason.nvim",
 	"williamboman/mason-lspconfig.nvim",
 	"neovim/nvim-lspconfig",
+	"mfussenegger/nvim-dap",
+	{ "rcarriga/nvim-dap-ui", commit = "5934302", dependencies = { "mfussenegger/nvim-dap", "nvim-neotest/nvim-nio" } },
 
 	"tpope/vim-surround",
 	"junegunn/fzf",
@@ -70,18 +72,20 @@ return {
 		opts = {}, -- this is equalent to setup({}) function
 	},
 
-	{
-		"thimc/gruber-darker.nvim",
-		config = function()
-			require("gruber-darker").setup({
-				-- OPTIONAL
-				transparent = false, -- removes the background
-				underline = true, -- disables underline fonts
-				bold = true, -- disables bold fonts
-			})
-			vim.cmd.colorscheme("gruber-darker")
-		end,
-	},
+	-- {
+	-- 	"thimc/gruber-darker.nvim",
+	-- 	config = function()
+	-- 		require("gruber-darker").setup({
+	-- 			-- OPTIONAL
+	-- 			transparent = false, -- removes the background
+	-- 			underline = true, -- disables underline fonts
+	-- 			bold = true, -- disables bold fonts
+	-- 		})
+	-- 		vim.cmd.colorscheme("gruber-darker")
+	-- 	end,
+	-- },
+
+	{ "blazkowolf/gruber-darker.nvim" },
 
 	-- install without yarn or npm
 	{

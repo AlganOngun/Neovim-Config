@@ -19,6 +19,9 @@ require("user.settings")
 
 require("lualine").setup({})
 
+require("pluginConfigs.lsp")
+require("pluginConfigs.dap")
+
 require("oil").setup()
 vim.keymap.set("n", "-", "<CMD>Oil<CR>", { desc = "Open parent directory" })
 
@@ -34,12 +37,6 @@ vim.keymap.set("", "f", function()
 end, { remap = true })
 vim.keymap.set("", "T", function()
 	hop.hint_lines_skip_whitespace({
-		current_line_only = false,
-		multi_windows = true,
-	})
-end, { remap = true })
-vim.keymap.set("", "t", function()
-	hop.hint_lines({
 		current_line_only = false,
 		multi_windows = true,
 	})
